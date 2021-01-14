@@ -1,0 +1,202 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Project</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}" />
+		<noscript><link rel="stylesheet" href="{{url_for('static', filename='css/noscript.css')}}" /></noscript>
+
+		<style>
+
+		.result{
+          font-weight:bold;
+          font-size: 145px;
+
+		}
+
+    .login{
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+}
+
+
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+.lastlines{color: yellow;}
+  }
+
+
+</style>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper" class="fade-in">
+
+				<!-- Intro -->
+					<div id="intro">
+						<h1>Online Checkup System <br />
+						    </h1>
+						<p>Health Portal welcomes you <a href="https://twitter.com/ajlkn"></a> <a href="https://html5up.net"></a><br />
+						<a href="https://html5up.net/license"></a></p>
+						<ul class="actions">
+							<li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
+						</ul>
+					</div>
+
+
+				
+
+				<!-- Header -->
+					<header id="header">
+						<a class="logo" style="color: yellow;">ML Project</a>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li class="active"><p style="color: green;">LIVER HEALTH MODEL<p></li>
+							
+						</ul>
+						<ul class="icons">
+				
+							<li><a href="https://www.linkedin.com/in/ayush-raj-3427b71ab/" class="icon brands fa-linkedin"><span class="label">Instagram</span></a></li>
+							<li><a href="https://github.com/rayushbpgc" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						 <div class="login">
+	<h2 >Fill the form</h2>
+<hr>
+
+     <!-- Main Input For Receiving Query to our ML -->
+   <!--Form-->
+			<form action = "{{url_for('predict')}}" method ="POST" >
+				<fieldset>
+		
+        		<br>
+				  <div class="card card-body" >
+					  <div class="form-group  row">
+						<div class="col-sm-3">
+							<label for="age">Age</label>
+							<input class="form-control" id="age" name="age" required>
+						</div>
+
+						<div class="col-sm-3">
+							<label for="sex">Sex</label>
+							<select class="form-control" id="sex"  name="sex" required>
+							  <option disabled selected value> -- Select an Option -- </option>
+							  <option value = "0">Female(0)</option>
+							  <option value = "1">Male(1)</option>
+							</select>
+					   </div>
+					  </div>
+					  <br>
+					  <div class="form-group  row">
+						  <div class="col-sm">
+						  	<label for="Total_Bilirubin">Total Bilirubin</label>
+							<input  class="form-control" id="Total_Bilirubin" name="Total_Bilirubin" required>
+						  </div>
+						  <div class="col-sm">
+							<label for="Direct_Bilirubin">Direct Bilirubin</label>
+							<input t class="form-control" id="Direct_Bilirubin" name="Direct_Bilirubin"  required>
+						  </div>
+					</div>
+					<br>
+					
+						 <div class="form-group  row">
+						  <div class="col-sm">
+							<label for="Alkaline_Phosphotase">Alkaline Phosphotase</label>
+							<input  class="form-control" id="Alkaline_Phosphotase" name="Alkaline_Phosphotase" required>
+						  </div>
+
+						  <div class="col-sm">
+							<label for="Alamine_Aminotransferase">Alamine Aminotransferase</label>
+							<input class="form-control" id="Alamine_Aminotransferase" name="Alamine_Aminotransferase" required>
+						  </div>
+						  </div>
+					<br>
+						<div class="form-group  row">
+						  <div class="col-sm">
+							<label for="Aspartate_Aminotransferase">Aspartate Aminotransferase</label>
+							<input class="form-control" id="Aspartate_Aminotransferase" name="Aspartate_Aminotransferase" required>
+						  </div>
+						 
+						  <div class="col-sm">
+							<label for="Total_Protiens">Total Protiens</label>
+							<input  class="form-control" id="Total_Protiens" name=Total_Protiens required>
+						  </div>
+					  </div>
+					  
+					  <br>
+					  <div class="form-group row">
+							  <div class="col-sm">
+								<label for=">Albumin">Albumin</label>
+								<input class="form-control" id="Albumin" name="Albumin" required>
+							  </div>
+							  <div class="col-sm">
+								<label for="Albumin_and_Globulin_Ratio">Albumin and Globulin Ratio	</label>
+								<input  class="form-control" id="Albumin_and_Globulin_Ratio	" name="Albumin_and_Globulin_Ratio" required>
+							  </div>
+							 
+						  </div>
+						  
+					  
+
+					  <br>
+					  <div class="form-group">
+						<input class="btn-primary" type="submit" value="Result">
+					  </div>
+					  
+					 
+				     
+				  	 </fieldset>
+				</form>
+			<hr>
+				 <!--Prediction Result-->
+					  <div id ="result">
+							<h2>{{prediction_text}}</h2>
+					 </div>
+
+
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul id="lastlines">The form and ML model are for educational purpose only.</ul><ul><li id="lastline">Thanks for visiting</li></ul>
+					</div>
+				
+
+				</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="static/js/jquery.min.js"></script>
+			<script src="static/js/jquery.scrollex.min.js"></script>
+			<script src="static/js/jquery.scrolly.min.js"></script>
+			<script src="static/js/browser.min.js"></script>
+			<script src="static/js/breakpoints.min.js"></script>
+			<script src="static/js/util.js"></script>
+			<script src="static/js/main.js"></script>
+			</div>
+	</body>
+</html>

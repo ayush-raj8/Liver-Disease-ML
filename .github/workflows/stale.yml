@@ -15,7 +15,6 @@ jobs:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
         stale-issue-message: 'This issue is labelled as stale because it has been open for more than 7 days with no activity.'
         days-before-stale: 1
-        days-before-close: -1
         stale-issue-label: 'Stale'
         exempt-issue-labels: 'Announcement,Pinned'
         remove-stale-when-updated: true
